@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Square&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./thelandlord.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>The Landlord text game</title>
+  </head>
+  <body>
+    <div id="press" class="hiden" ><h1 onclick="pressStart()" id="h1" >Press Start</h1></div>
+    <header class="hidden" id="header">
+      
+      <div id="startScreen">
+        <h2>The LandLord</h2>
+        <div id="story">
+         <p> Welcome to the LandLord Game. In this story you have to make the right choices to avoid
+          getting evicted by the landlord. You will have 2 diffrent options when asked. make the right choices.</p>
+
+          <div id="description">Please enter your name</div>
+          <form id="option-form">
+            <input type="text" id="option-input"/>
+            <button id="enter" onclick="">OK</button>
+
+          </form>
+
+        </div>
+      </div>
+    </header>
+  </body>
+</html>
