@@ -20,10 +20,7 @@
       <div id="press"><h1 onclick="pressStart()" id="h1">Press Start</h1></div>
       <div class="hidden" id="startScreen">
         <h2>The LandLord Game</h2>
-        <audio id="start-music" class="music" controls>
-          <source class="m-controlls" src="./media/intro.mp3" type="audio/mpeg" />
-          Your browser does not support the audio element.
-        </audio>
+        
 
         <div id="story">
           <p id="story-text"></p>
@@ -33,6 +30,18 @@
           <div class="button-box">
             <button class="button" id="opt-1" onclick=""></button>
             <button class="button" id="opt-2" onclick=""></button>
+
+
+            <audio id="game-over-music" class="music" controls>
+              <source class="m-controlls" src="./media/game-over-man-game-over-mp3cut.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+
+            <audio id="start-music" class="music" controls>
+              <source class="m-controlls" src="./media/intro.mp3" type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+            
           </div>
         </div>
       </div>
@@ -40,5 +49,4 @@
   </body>
 </html>
 
-Welcome to the LandLord Game. In this story you have to make the right choices to avoid getting
-evicted by the landlord. You will have 2 diffrent options when asked. make the right choices
+
