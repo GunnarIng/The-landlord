@@ -1,10 +1,12 @@
 window.addEventListener("DOMContentLoaded", main);
 
 let beer = false;
+let whiskey = false;
 
 function main() {
   addEventListeners();
 }
+
 
 function addEventListeners() {
   const h1 = document.getElementById("h1");
@@ -23,12 +25,12 @@ function pressStart() {
   showstartScreen.classList.toggle("hidden");
   pressStartText.classList.toggle("hidden");
 
-  startMusic.autoplay = true;
+  // startMusic.autoplay = true;
   startMusic.volume = 0.2;
   startMusic.load();
 
   story.textContent =
-    "Welcome to the LandLord Game. In this story you have to make the right choices to avoid getting evicted by the landlord. You will have 2 diffrent options when asked, make the right choices.";
+    "Welcome to the LandLord Game. In this story you have to make \n the right choices to avoid getting evicted by the landlord. You will have 2 diffrent options when asked, make the right choices.";
   whatWillYouDo.textContent = "Lets go!!";
 
   button1.textContent = "Rock on!";
@@ -47,7 +49,8 @@ function theStart() {
 
   story.textContent =
     'You wake up on the floor with a bad hangover. Suddenly you hear someone banging on your door and shouting "I know you are in there, open up!".';
-  whatWillYouDo.textContent = "Every movement makes my head feels like it will explode any second....maybe this is just a nightmare";
+  whatWillYouDo.textContent =
+    "Every movement makes my head feels like it will explode any second....maybe this is just a nightmare";
 
   button1.onclick = openDoorScenario;
   button1.textContent = "Open the door";
@@ -56,8 +59,7 @@ function theStart() {
   button2.textContent = "You get paranoind and hide under the bed";
 }
 
-
-// ---------------- Scenario Open the Door ---------------------- 
+// ---------------- Scenario Open the Door ----------------------
 
 function openDoorScenario() {
   const story = document.getElementById("story-text");
@@ -78,11 +80,11 @@ function openDoorScenario() {
   button2.textContent = "Tell her that you gonna pay, you just need a few more days";
   button2.onclick = tallkYourWayOut;
 }
-// 
-// 
-// 
+//
+//
+//
 // ------------------ Scenario: Open the door Pt2 ------------------
-// Scenario open the door alternitive path ---- Do I need this when returning from scenario: Hide under bed
+//
 function openDoorScenarioPt2() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -94,14 +96,14 @@ function openDoorScenarioPt2() {
   whatWillYouDo.textContent = "Damn, you've gotta calm her down. What will you do?";
 
   button1.textContent = "Head back inside and see what you can give her to calm her down";
-  // button1.onclick = getInsideScenario;
+  button1.onclick = getInsideScenario;
 
   button2.textContent =
     "You explain that you work 3 jobs and time are scarce cause your dog just died. You just dont have the money right now. Please understand me.";
   button2.onclick = gameOverScenario;
 }
 
-// ------------------ Scenario: Get inside ------------------
+// ------------------ Scenario: talk you way out ------------------
 function tallkYourWayOut() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -113,16 +115,85 @@ function tallkYourWayOut() {
   whatWillYouDo.textContent = "Damn, you've gotta calm her down. What will you do?";
 
   button1.textContent = "Head back inside and see what you can give her to calm her down";
-  // button1.onclick = getInsideScenario;
+  button1.onclick = getInsideScenario;
 
   button2.textContent =
     "You tell her that she can have your car, it's a bit rusty but i purrs like a cat.";
   button2.onclick = gameOverScenario;
 }
-// 
-// 
-// 
-// 
+//
+// ------------------Scenario: get inside ------------------------
+function getInsideScenario() {
+  const story = document.getElementById("story-text");
+  const whatWillYouDo = document.getElementById("description");
+  const button1 = document.getElementById("opt-1");
+  const button2 = document.getElementById("opt-2");
+
+  story.textContent =
+    "You´re stressed out and want to find something for her to drink. The appertment looks like shit, like someone had a big 'fuck-Around-Party'!!";
+  whatWillYouDo.textContent =
+    "After a while, you find a half bottle of whiskey and a six pack of beers. You wont give her all cause you need something to cure your hangover later on";
+
+  button1.textContent = "Pick up the whiskey";
+  button1.onclick = whiskeyBottle;
+
+  button2.textContent = "Pick up the the 6 pack";
+  button2.onclick = beerCan;
+}
+
+function whiskeyBottle() {
+  whiskey = true;
+  giveSomethingToPearl();
+}
+
+function beerCan() {
+  beer = true;
+  giveSomethingToPearl();
+}
+
+
+
+
+
+function giveSomethingToPearl() {
+  if (beer === true) {
+    const story = document.getElementById("story-text");
+    const whatWillYouDo = document.getElementById("description");
+    const button1 = document.getElementById("opt-1");
+    const button2 = document.getElementById("opt-2");
+
+    story.textContent = "You hand over beer to Pearl";
+
+    whatWillYouDo.textContent = "what will you do";
+
+    button1.textContent = "Give beer to pearl and ask her to stop bothering you";
+    button1.onclick = youWon;
+
+    button2.textContent = "Throw the beer in her face!! And get to fuck off";
+    button2.onclick = gameOverScenario;
+  }
+
+  if (whiskey === true) {
+    const story = document.getElementById("story-text");
+    const whatWillYouDo = document.getElementById("description");
+    const button1 = document.getElementById("opt-1");
+    const button2 = document.getElementById("opt-2");
+
+    story.textContent = "You hand over whiskey to Pearl";
+
+    whatWillYouDo.textContent = "what will you do";
+
+    button1.textContent = "Give whiskey to pearl and ask her to stop bothering you";
+    button1.onclick = gameOverScenario;
+
+    button2.textContent = "Smash the whiskey bottle infront of her feet and laugh at her";
+    button2.onclick = gameOverScenario;
+  }
+}
+
+//
+//
+//
 // ------------------ Scenario: Hide under bed ------------------
 // Hide function will either lead to game over ocr continue the story ----- Issue from here to open the door scenario.
 function hideUnderBedScenario() {
@@ -140,13 +211,13 @@ function hideUnderBedScenario() {
   button2.textContent = "Ok, i'll open the door";
   button2.onclick = openDoorScenario;
 }
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+//
+//
+//
+//
+//
+//
+//
 // ------------------ Game over scenarios ------------------
 // This will restart the game and tell you that you lost
 
@@ -182,16 +253,15 @@ function gameOverScenario() {
 function restart() {
   const startScreen = document.getElementById("startScreen");
   const press = document.getElementById("press");
-  const startMusic = document.getElementById("startMusic");
   const gameOverMusic = document.getElementById("game-over-music");
+  const whatWillYouDo = document.getElementById("description");
 
   startScreen.classList.add("hidden");
   press.classList.remove("hidden");
 
+  whatWillYouDo.style.color = "white";
+
   gameOverMusic.pause();
-  startMusic.autoplay = false;
-  startMusic.volume = 0.8;
-  startMusic.load();
 }
 
 // Visa start diven

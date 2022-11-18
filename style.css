@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  
 }
 
 #press {
@@ -40,6 +41,7 @@ h2 {
 }
 
 #story {
+  white-space: pre-line;
   font-family: "Carrois Gothic SC", sans-serif;
   display: flex;
   flex-direction: column;
@@ -50,8 +52,8 @@ h2 {
   border-style: solid;
   box-shadow: black 5px 5px 5px;
   background: blue;
-  height: 40%;
-  width: 70%;
+  height: 60%;
+  width: 90%;
 }
 
 #description {
