@@ -4,8 +4,8 @@ let beer = false;
 let whiskey = false;
 
 function main() {
-  runTheGame();
-  // youWon();
+  // runTheGame();
+  youWon();
 }
 
 function runTheGame() {
@@ -191,11 +191,13 @@ function giveSomethingToPearl() {
 }
 
 function youWon() {
-  const theEnd = document.getElementById("endScreen");
+  const showstartScreen = document.getElementById("startScreen");
+const p = document.createElement("p")
 
-
-
-  theEnd.textContent = "NOOOOOOOOOOO";
+p.textContent = "sadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcfsadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcfsadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcfsadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcf"
+p.className = "theEnd"
+document.body.textContent = ""
+document.body.append(p)
 
 }
 

@@ -141,6 +141,23 @@ h1:hover {
 }
 
 
+.theEnd {
+  position: absolute;
+  display: flex;
+  padding: 0px 5em 0px 5em;
+  flex-direction: column;
+  justify-content: center;
+  color: #ffc909;
+  height: 100vh;
+  width: 100%;
+  background-image:url("./media/city\ background.jpg");
+  background-size: cover;
+  background-position: bottom center;
+}
+
+
+
+
 @media screen and (max-width: 872px) {
   
   h1 {
