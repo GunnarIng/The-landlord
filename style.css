@@ -1,9 +1,19 @@
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   
 }
+header {
+  
+  background-image:url("./media/city\ background.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  
+}
+
 
 #press {
   position: absolute;
@@ -16,6 +26,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 
 #startScreen {
@@ -28,6 +39,9 @@
   width: 100%;
   background-color: rgb(99, 96, 99);
   color: rgb(255, 255, 255);
+  background-image:url("./media/city\ background.jpg");
+  background-size: cover;
+  background-position: bottom center;
 }
 
 h2 {
@@ -41,19 +55,20 @@ h2 {
 }
 
 #story {
-  white-space: pre-line;
+  
   font-family: "Carrois Gothic SC", sans-serif;
   display: flex;
+  text-align: center;
   flex-direction: column;
   justify-content: space-between;
   font-size: 1.3rem;
-  padding: 1rem 0 1rem 1rem;
+  padding: 1rem;
   border-radius: 10px;
   border-style: solid;
   box-shadow: black 5px 5px 5px;
   background: blue;
   height: 60%;
-  width: 90%;
+  width: 70%;
 }
 
 #description {
@@ -74,13 +89,19 @@ h2 {
   gap: 10px;
 }
 
+.button:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+
+}
+
 .button {
   display: flex;
   font-family: "Press Start 2P", cursive;
   justify-content: center;
   align-items: center;
-  font-size: 0.6rem;
-  padding: 0.7rem;
+  font-size: 0.8rem;
+  padding: 0.3rem;
   margin-top: 8px;
   border-radius: 5px;
   border-style: solid;
@@ -117,6 +138,35 @@ h1:hover {
 .hidden {
   display: none;
   z-index: -1;
+}
+
+
+@media screen and (max-width: 872px) {
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2{
+      top: 1.6rem;
+      font-size: 20px;
+  }
+
+  #story {
+    height: 70%;
+    width: 80%;
+    font-size: 1rem;
+  }
+  
+  #description {
+    font-size: 1rem;
+  }
+
+ .button{
+      font-size: 0.5rem;
+      width: 150px;
+  }
+  
 }
 
 

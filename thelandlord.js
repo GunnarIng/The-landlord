@@ -4,15 +4,16 @@ let beer = false;
 let whiskey = false;
 
 function main() {
-  addEventListeners();
+  runTheGame();
+  // youWon();
 }
 
-
-function addEventListeners() {
+function runTheGame() {
   const h1 = document.getElementById("h1");
   h1.onclick = pressStart;
 }
 
+/** */
 function pressStart() {
   const startMusic = document.getElementById("start-music");
   const pressStartText = document.getElementById("press");
@@ -25,12 +26,12 @@ function pressStart() {
   showstartScreen.classList.toggle("hidden");
   pressStartText.classList.toggle("hidden");
 
-  // startMusic.autoplay = true;
+  startMusic.autoplay = true;
   startMusic.volume = 0.2;
   startMusic.load();
 
   story.textContent =
-    "Welcome to the LandLord Game. In this story you have to make \n the right choices to avoid getting evicted by the landlord. You will have 2 diffrent options when asked, make the right choices.";
+    "Welcome to the LandLord Game. In this story you have to make  the right choices to avoid getting evicted by the landlord. You will have 2 diffrent options when asked, make the right choices.";
   whatWillYouDo.textContent = "Lets go!!";
 
   button1.textContent = "Rock on!";
@@ -99,7 +100,7 @@ function openDoorScenarioPt2() {
   button1.onclick = getInsideScenario;
 
   button2.textContent =
-    "You explain that you work 3 jobs and time are scarce cause your dog just died. You just dont have the money right now. Please understand me.";
+    "You explain that you work 3 jobs and time are scarce cause your dog just died. You just dont have the money right now.";
   button2.onclick = gameOverScenario;
 }
 
@@ -118,11 +119,11 @@ function tallkYourWayOut() {
   button1.onclick = getInsideScenario;
 
   button2.textContent =
-    "You tell her that she can have your car, it's a bit rusty but i purrs like a cat.";
+    "You tell her that she can have your car, it's a bit rusty but it purrs like a cat.";
   button2.onclick = gameOverScenario;
 }
 //
-// ------------------Scenario: get inside ------------------------
+// ------------------Scenario: get inside   these options leads to boolean functions ------------------------
 function getInsideScenario() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -137,10 +138,11 @@ function getInsideScenario() {
   button1.textContent = "Pick up the whiskey";
   button1.onclick = whiskeyBottle;
 
-  button2.textContent = "Pick up the the 6 pack";
+  button2.textContent = "Pick up the the 6-pack";
   button2.onclick = beerCan;
 }
 
+// -------------------- Boolean functions ------------
 function whiskeyBottle() {
   whiskey = true;
   giveSomethingToPearl();
@@ -151,10 +153,7 @@ function beerCan() {
   giveSomethingToPearl();
 }
 
-
-
-
-
+// ---------------- Scenario: Give pearl item -----------------
 function giveSomethingToPearl() {
   if (beer === true) {
     const story = document.getElementById("story-text");
@@ -162,14 +161,14 @@ function giveSomethingToPearl() {
     const button1 = document.getElementById("opt-1");
     const button2 = document.getElementById("opt-2");
 
-    story.textContent = "You hand over beer to Pearl";
+    story.textContent = "You better have something good for me or i´ll put you on the streets!";
 
-    whatWillYouDo.textContent = "what will you do";
+    whatWillYouDo.textContent = "Shes being a bully. Is this ok? Shes a mean bitch.";
 
     button1.textContent = "Give beer to pearl and ask her to stop bothering you";
     button1.onclick = youWon;
 
-    button2.textContent = "Throw the beer in her face!! And get to fuck off";
+    button2.textContent = "Throw the beer in her face!! And tell her to get the fuck off";
     button2.onclick = gameOverScenario;
   }
 
@@ -179,17 +178,29 @@ function giveSomethingToPearl() {
     const button1 = document.getElementById("opt-1");
     const button2 = document.getElementById("opt-2");
 
-    story.textContent = "You hand over whiskey to Pearl";
+    story.textContent = "You better have something good for me or i´ll put you on the streets!";
 
-    whatWillYouDo.textContent = "what will you do";
+    whatWillYouDo.textContent = "Shes being a bully. Is this ok? Shes a mean bitch.";
 
-    button1.textContent = "Give whiskey to pearl and ask her to stop bothering you";
+    button1.textContent = "Give the half full whiskey bottle to her.";
     button1.onclick = gameOverScenario;
 
     button2.textContent = "Smash the whiskey bottle infront of her feet and laugh at her";
     button2.onclick = gameOverScenario;
   }
 }
+
+function youWon() {
+  const theEnd = document.getElementById("endScreen");
+
+
+
+  theEnd.textContent = "NOOOOOOOOOOO";
+
+}
+
+
+
 
 //
 //
@@ -244,12 +255,6 @@ function gameOverScenario() {
   button1.onclick = restart;
 }
 
-/**
- * @param {function} callback - This will return the user to the start of the game.
-  
- }} text
- */
-
 function restart() {
   const startScreen = document.getElementById("startScreen");
   const press = document.getElementById("press");
@@ -264,15 +269,4 @@ function restart() {
   gameOverMusic.pause();
 }
 
-// Visa start diven
-// Dölj spel diven
-// Återställa ev globala variabler
-
-// const inventory = ["key", "child"];
-// const hasKey = true;
-// const hasChild = true;
-
-// document.body.innerHTML = ".....";
-// cons button3 = document.createElement("button")
-
-// *above we create and add a button to the DOM
+// ------------------ You won scenario ------------------
