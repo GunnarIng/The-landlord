@@ -1,22 +1,25 @@
 window.addEventListener("DOMContentLoaded", main);
 
+
+/**@type {boolean} Booleans to lead the game to win or loose scenarios */
 let beer = false;
 let whiskey = false;
 
+
+/** Starts the script when the DOM is loaded */
 function main() {
 runTheGame();
-
 }
 
 
-
-
+/** Gets the h1 and is the frist interactive function for the user */
 function runTheGame() {
   const h1 = document.getElementById("h1");
   h1.onclick = pressStart;
 }
 
-/** */
+
+/** Sets the base-layout for the whole program, contains allmost every element  /  intro screen for the user  */
 function pressStart() {
   const startMusic = document.getElementById("start-music");
   const pressStartText = document.getElementById("press");
@@ -43,6 +46,8 @@ function pressStart() {
   button2.classList.add("hidden");
 }
 
+
+/** Start of the story with the two first options / inc. a .remove(hidden) to show both buttons */
 function theStart() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -63,8 +68,7 @@ function theStart() {
   button2.textContent = "You get paranoind and hide under the bed";
 }
 
-// ---------------- Scenario Open the Door ----------------------
-
+/**  ---------------- Scenario: Open the Door ----------------------*/
 function openDoorScenario() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -74,9 +78,9 @@ function openDoorScenario() {
   button2.classList.remove("hidden");
 
   story.textContent =
-    "You open the dooor and there stands Pearl with her arms across and seems really angry. She yells at you and says that she wants her money for the rent NOW bitch!! She's intimidating, you feel intimidated by her aggresive behavior.   ";
+    "You open the dooor and there stands Pearl with her arms across and seems really angry. She yells at you and says that she wants her money for the rent NOW bitch!! She's fucking loco, you feel intimidated by her aggresive behavior.";
   whatWillYouDo.textContent =
-    "Ok, Pearl is 3ft tall and weighs like 20lbs, but you're scared of her. what to do?  ";
+    "Ok, Pearl is 3ft tall and weighs like 20lbs, but you're scared of her. what do you do?  ";
 
   button1.textContent = "Ask her why shes so mean?";
   button1.onclick = openDoorScenarioPt2;
@@ -84,11 +88,8 @@ function openDoorScenario() {
   button2.textContent = "Tell her that you gonna pay, you just need a few more days";
   button2.onclick = tallkYourWayOut;
 }
-//
-//
-//
-// ------------------ Scenario: Open the door Pt2 ------------------
-//
+
+/**  ---------------- Scenario: Open the DoorPt2 ----------------------*/
 function openDoorScenarioPt2() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -96,18 +97,18 @@ function openDoorScenarioPt2() {
   const button2 = document.getElementById("opt-2");
 
   story.textContent =
-    "Pearl says that she needs her money for drinks!. You ask her if shes drunk? She mumbeling something about beer, whiskey and money. You tell her that shes an alcoholic. She gets mad and says that she will call the police. ";
+    "Pearl says that she needs her money for drinks!. You ask her if shes drunk? She mumbeling something about beer, whiskey and money. You tell her that shes an alcoholic. She gets mad and says that she will smack you and call the police on you. ";
   whatWillYouDo.textContent = "Damn, you've gotta calm her down. What will you do?";
 
   button1.textContent = "Head back inside and see what you can give her to calm her down";
   button1.onclick = getInsideScenario;
 
   button2.textContent =
-    "You explain that you work 3 jobs and time are scarce cause your dog just died. You just dont have the money right now.";
+    "You explain that you work 3 jobs and time are scarce, cause your dog just died. You just dont have the money right now.";
   button2.onclick = gameOverScenario;
 }
 
-// ------------------ Scenario: talk you way out ------------------
+/**  ---------------- Scenario: Talk Your Way Out ----------------------*/
 function tallkYourWayOut() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -115,7 +116,7 @@ function tallkYourWayOut() {
   const button2 = document.getElementById("opt-2");
 
   story.textContent =
-    "Pearl reminds you that you are 15 days late with the pay. Ypu tell her that you've gotten unforseen expanses cause your dog had to be put down by the vet. She shows no compassion and say that she will smack me if I don't pay her. ";
+    "Pearl reminds you that you are 15 days late with the pay. You tell her that you've gotten unforseen expanses cause your dog had to be put down by the vet. She shows no compassion and say that she will smack me if I don't pay her. ";
   whatWillYouDo.textContent = "Damn, you've gotta calm her down. What will you do?";
 
   button1.textContent = "Head back inside and see what you can give her to calm her down";
@@ -125,8 +126,9 @@ function tallkYourWayOut() {
     "You tell her that she can have your car, it's a bit rusty but it purrs like a cat.";
   button2.onclick = gameOverScenario;
 }
-//
-// ------------------Scenario: get inside   these options leads to boolean functions ------------------------
+
+
+/**   Scenario: Get inside --- These options leads to the 'if' function */
 function getInsideScenario() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
@@ -145,7 +147,8 @@ function getInsideScenario() {
   button2.onclick = beerCan;
 }
 
-// -------------------- Boolean functions ------------
+
+/**  ---------------- Boolean functions ----------------------*/
 function whiskeyBottle() {
   whiskey = true;
   giveSomethingToPearl();
@@ -156,7 +159,8 @@ function beerCan() {
   giveSomethingToPearl();
 }
 
-// ---------------- Scenario: Give pearl item -----------------
+
+/**   Scenario: Give Pearl An Item  --- Boolean inside  */
 function giveSomethingToPearl() {
   if (beer === true) {
     const story = document.getElementById("story-text");
@@ -164,14 +168,14 @@ function giveSomethingToPearl() {
     const button1 = document.getElementById("opt-1");
     const button2 = document.getElementById("opt-2");
 
-    story.textContent = "You better have something good for me or i´ll put you on the streets!";
+    story.textContent = "You better have something good for me or i´ll put you ON THE STREETS!";
 
-    whatWillYouDo.textContent = "Shes being a bully. Is this ok? Shes a mean bitch.";
+    whatWillYouDo.textContent = "Shes being a bully. Is this ok? She is a mean bitch.";
 
-    button1.textContent = "Give beer to pearl and ask her to stop bothering you";
+    button1.textContent = "Give beer to pearl and tell her to stop bothering you";
     button1.onclick = youWon;
 
-    button2.textContent = "Throw the beer in her face!! And tell her to get the fuck off";
+    button2.textContent = "Throw the beer in her face!! And tell her to leave you alone.";
     button2.onclick = gameOverScenario;
   }
 
@@ -181,9 +185,9 @@ function giveSomethingToPearl() {
     const button1 = document.getElementById("opt-1");
     const button2 = document.getElementById("opt-2");
 
-    story.textContent = "You better have something good for me or i´ll put you on the streets!";
+    story.textContent = "You better have something good for me or i´ll put you ON THE STREETS!";
 
-    whatWillYouDo.textContent = "Shes being a bully. Is this ok? Shes a mean bitch.";
+    whatWillYouDo.textContent = "Shes being a bully. Is this ok? She is a mean bitch.";
 
     button1.textContent = "Give the half full whiskey bottle to her.";
     button1.onclick = gameOverScenario;
@@ -194,50 +198,25 @@ function giveSomethingToPearl() {
 }
 
 
-
-
-// create audio element with local source
-const audio = document.createElement("audio");
-audio.src = "./";
-audio.autoplay = true;
-audio.volume = 0.2;
-audio.load();
-
-
-
-
-
-
-//
-//
-//
-// ------------------ Scenario: Hide under bed ------------------
-// Hide function will either lead to game over ocr continue the story ----- Issue from here to open the door scenario.
+// /**  ---------------- Scenario: Hide Under Bed ----------------------*/
 function hideUnderBedScenario() {
   const story = document.getElementById("story-text");
   const whatWillYouDo = document.getElementById("description");
   const button1 = document.getElementById("opt-1");
   const button2 = document.getElementById("opt-2");
 
-  story.textContent = "shes just keeping banging on your door. ";
+  story.textContent = "She is just keeping hammering on your door. She wont stop. ";
   whatWillYouDo.textContent = "Shes persistent, what will you do?";
 
   button1.textContent = "Get drunk and tell her to get lost!!";
   button1.onclick = gameOverScenario;
 
-  button2.textContent = "Ok, i'll open the door";
+  button2.textContent = "Ok, you'll open the door";
   button2.onclick = openDoorScenario;
 }
-//
-//
-//
-//
-//
-//
-//
-// ------------------ Game over scenarios ------------------
-// This will restart the game and tell you that you lost
 
+
+/**  Scenario: Game Over --- inc. music and onclick to restart the game*/
 function gameOverScenario() {
   const startMusic = document.getElementById("start-music");
   const gameOverMusic = document.getElementById("game-over-music");
@@ -262,7 +241,7 @@ function gameOverScenario() {
 }
 
 
-/**  */
+/** Restart function - to play again */
 function restart() {
   const startScreen = document.getElementById("startScreen");
   const press = document.getElementById("press");
@@ -279,32 +258,22 @@ function restart() {
 
 
 /** Endscreen made with only created elements in the fuction */
-
 function youWon() {
- 
- 
   const audio = document.createElement("audio");
   audio.src = "./media/Arcade-Puzzler.mp3";
   audio.autoplay = true;
   audio.volume = 0.8;
   audio.load();
     
-    
-  
-  
   const divz = document.createElement("div")
   const p = document.createElement("p")
   
   divz.textContent = ""
   divz.className = "theEndContainer"
   
-  
-  
-  p.textContent = "Eureka! You live another day with a roof over your head! \n\n\n   This is the first text-based game i've done and with some help from my teacher and classmates.\n\n I want to thank:\n\n  Kenzo\n\n Noomie\n\n Madden\n\n David\n\n Linus\n\n Simon\n\n Sebbe\n\n \n And class: Fed22G \n\n\n\n\n\nPress ctrl + R to restart"
+  p.textContent = "Eureka! You live another day with a roof over your head! \n\n\n   This is the first text-based game i've done and with some help from my teacher and classmates.\n\n I want to thank:\n\n  Kenzo\n\n Noomie\n\n Madden\n\n David\n\n Linus\n\n Simon\n\n Sebbe\n\n \n And class: Fed22G \n\n\nTribute to Mr.Lahey\n\n 'I'm sober enough to know what I'm doing, and drunk enough to really enjoy it.'\n\nPress ctrl + R to restart"
   p.className = "theEnd"
   
   document.body.textContent = ""
-  document.body.append(divz, p)
-  
-    
+  document.body.append(divz, p)  
   }
