@@ -1,5 +1,3 @@
-
-
 * {
   padding: 0;
   margin: 0;
@@ -7,13 +5,18 @@
   
 }
 header {
-  
-  background-image:url("./media/city\ background.jpg");
+  background-image: url("./media/city\ background.jpg");
   background-size: cover;
   background-position: bottom center;
   
 }
 
+body {
+  overflow: hidden;
+  position: relative;
+  
+  
+}
 
 #press {
   position: absolute;
@@ -26,7 +29,6 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 }
 
 #startScreen {
@@ -39,7 +41,7 @@ header {
   width: 100%;
   background-color: rgb(99, 96, 99);
   color: rgb(255, 255, 255);
-  background-image:url("./media/city\ background.jpg");
+  background-image: url("./media/city\ background.jpg");
   background-size: cover;
   background-position: bottom center;
 }
@@ -55,7 +57,6 @@ h2 {
 }
 
 #story {
-  
   font-family: "Carrois Gothic SC", sans-serif;
   display: flex;
   text-align: center;
@@ -92,7 +93,6 @@ h2 {
 .button:hover {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-
 }
 
 .button {
@@ -101,7 +101,8 @@ h2 {
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  padding: 0.3rem;
+  line-height: 19px;
+  padding: 0.1rem;
   margin-top: 8px;
   border-radius: 5px;
   border-style: solid;
@@ -140,33 +141,57 @@ h1:hover {
   z-index: -1;
 }
 
-
-.theEnd {
-  position: absolute;
+.theEndContainer {
+ 
   display: flex;
-  padding: 0px 5em 0px 5em;
   flex-direction: column;
   justify-content: center;
-  color: #ffc909;
+  align-items: center;
   height: 100vh;
   width: 100%;
-  background-image:url("./media/city\ background.jpg");
+  color: rgb(255, 255, 255);
+  background-image: url("./media/city\ background.jpg");
   background-size: cover;
   background-position: bottom center;
+  
+  
+  
 }
 
 
+.theEnd {
+  white-space: pre-line;
+  font-family: "Press Start 2P", cursive;
+  margin: 20% auto;
+  align-items: center;
+  padding: 0px 5em 0px 5em;
+  color: #ffc909;
+  font-size: 4vh;
+  line-height: 1.5;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  animation: runfool 30s linear forwards;
+  
+}
 
+@keyframes runfool {
+  from {
+    top: 0em;
+  }
+  to {
+    top: -72em;
+  }
+}
 
 @media screen and (max-width: 872px) {
-  
   h1 {
     font-size: 1.5rem;
   }
-  
-  h2{
-      top: 1.6rem;
-      font-size: 20px;
+
+  h2 {
+    top: 1.6rem;
+    font-size: 20px;
   }
 
   #story {
@@ -174,21 +199,47 @@ h1:hover {
     width: 80%;
     font-size: 1rem;
   }
-  
+
   #description {
     font-size: 1rem;
   }
 
- .button{
-      font-size: 0.5rem;
-      width: 150px;
+  .button {
+    font-size: 0.5rem;
+    width: 150px;
   }
-  
+
+  .theEnd {
+    font-size: 3vh;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.2rem;
+  }
 
+  h2 {
+    top: 1.6rem;
+    font-size: 20px;
+  }
 
+  #story {
+    height: 70%;
+    width: 80%;
+    font-size: 1rem;
+  }
 
+  #description {
+    font-size: 1rem;
+  }
 
+  .button {
+    font-size: 0.5rem;
+    width: 150px;
+  }
 
-
+  .theEnd {
+    font-size: 2vh;
+  }
+}

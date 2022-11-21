@@ -4,9 +4,12 @@ let beer = false;
 let whiskey = false;
 
 function main() {
-  // runTheGame();
-  youWon();
+runTheGame();
+
 }
+
+
+
 
 function runTheGame() {
   const h1 = document.getElementById("h1");
@@ -138,7 +141,7 @@ function getInsideScenario() {
   button1.textContent = "Pick up the whiskey";
   button1.onclick = whiskeyBottle;
 
-  button2.textContent = "Pick up the the 6-pack";
+  button2.textContent = "Pick up the the beer";
   button2.onclick = beerCan;
 }
 
@@ -190,16 +193,17 @@ function giveSomethingToPearl() {
   }
 }
 
-function youWon() {
-  const showstartScreen = document.getElementById("startScreen");
-const p = document.createElement("p")
 
-p.textContent = "sadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcfsadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcfsadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcfsadfsdf sdaf la;fksasl; kdl;asfk lsa;fk lakfqwlpo[kdcf"
-p.className = "theEnd"
-document.body.textContent = ""
-document.body.append(p)
 
-}
+
+// create audio element with local source
+const audio = document.createElement("audio");
+audio.src = "./";
+audio.autoplay = true;
+audio.volume = 0.2;
+audio.load();
+
+
 
 
 
@@ -257,6 +261,8 @@ function gameOverScenario() {
   button1.onclick = restart;
 }
 
+
+/**  */
 function restart() {
   const startScreen = document.getElementById("startScreen");
   const press = document.getElementById("press");
@@ -271,4 +277,34 @@ function restart() {
   gameOverMusic.pause();
 }
 
-// ------------------ You won scenario ------------------
+
+/** Endscreen made with only created elements in the fuction */
+
+function youWon() {
+ 
+ 
+  const audio = document.createElement("audio");
+  audio.src = "./media/Arcade-Puzzler.mp3";
+  audio.autoplay = true;
+  audio.volume = 0.8;
+  audio.load();
+    
+    
+  
+  
+  const divz = document.createElement("div")
+  const p = document.createElement("p")
+  
+  divz.textContent = ""
+  divz.className = "theEndContainer"
+  
+  
+  
+  p.textContent = "Eureka! You live another day with a roof over your head! \n\n\n   This is the first text-based game i've done and with some help from my teacher and classmates.\n\n I want to thank:\n\n  Kenzo\n\n Noomie\n\n Madden\n\n David\n\n Linus\n\n Simon\n\n Sebbe\n\n \n And class: Fed22G \n\n\n\n\n\nPress ctrl + R to restart"
+  p.className = "theEnd"
+  
+  document.body.textContent = ""
+  document.body.append(divz, p)
+  
+    
+  }
