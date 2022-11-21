@@ -1,4 +1,4 @@
-##The LandLord Text-based Game
+The LandLord Text-based Game
 
 This is my first JavaScript school project after reading JavaScript for 3 weeks. Learned alot during the project and relize that you can solve problems with alot of diffrent options with JavaScript. 
 
