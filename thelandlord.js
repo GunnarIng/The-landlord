@@ -1,23 +1,19 @@
 window.addEventListener("DOMContentLoaded", main);
 
-
 /**@type {boolean} Booleans to lead the game to win or loose scenarios */
 let beer = false;
 let whiskey = false;
 
-
 /** Starts the script when the DOM is loaded */
 function main() {
-runTheGame();
+  runTheGame();
 }
-
 
 /** Gets the h1 and is the frist interactive function for the user */
 function runTheGame() {
   const h1 = document.getElementById("h1");
   h1.onclick = pressStart;
 }
-
 
 /** Sets the base-layout for the whole program, contains allmost every element  /  intro screen for the user  */
 function pressStart() {
@@ -45,7 +41,6 @@ function pressStart() {
 
   button2.classList.add("hidden");
 }
-
 
 /** Start of the story with the two first options / inc. a .remove(hidden) to show both buttons */
 function theStart() {
@@ -127,7 +122,6 @@ function tallkYourWayOut() {
   button2.onclick = gameOverScenario;
 }
 
-
 /**   Scenario: Get inside --- These options leads to the 'if' function */
 function getInsideScenario() {
   const story = document.getElementById("story-text");
@@ -147,7 +141,6 @@ function getInsideScenario() {
   button2.onclick = beerCan;
 }
 
-
 /**  ---------------- Boolean functions ----------------------*/
 function whiskeyBottle() {
   whiskey = true;
@@ -158,7 +151,6 @@ function beerCan() {
   beer = true;
   giveSomethingToPearl();
 }
-
 
 /**   Scenario: Give Pearl An Item  --- Boolean inside  */
 function giveSomethingToPearl() {
@@ -197,7 +189,6 @@ function giveSomethingToPearl() {
   }
 }
 
-
 // /**  ---------------- Scenario: Hide Under Bed ----------------------*/
 function hideUnderBedScenario() {
   const story = document.getElementById("story-text");
@@ -214,7 +205,6 @@ function hideUnderBedScenario() {
   button2.textContent = "Ok, you'll open the door";
   button2.onclick = openDoorScenario;
 }
-
 
 /**  Scenario: Game Over --- inc. music and onclick to restart the game*/
 function gameOverScenario() {
@@ -240,7 +230,6 @@ function gameOverScenario() {
   button1.onclick = restart;
 }
 
-
 /** Restart function - to play again */
 function restart() {
   const startScreen = document.getElementById("startScreen");
@@ -256,7 +245,6 @@ function restart() {
   gameOverMusic.pause();
 }
 
-
 /** Endscreen made with only created elements in the fuction */
 function youWon() {
   const audio = document.createElement("audio");
@@ -264,16 +252,17 @@ function youWon() {
   audio.autoplay = true;
   audio.volume = 0.8;
   audio.load();
-    
-  const divz = document.createElement("div")
-  const p = document.createElement("p")
-  
-  divz.textContent = ""
-  divz.className = "theEndContainer"
-  
-  p.textContent = "Eureka! You live another day with a roof over your head! \n\n\n   This is the first text-based game i've done and with some help from my teacher and classmates.\n\n I want to thank:\n\n  Kenzo\n\n Noomie\n\n Madden\n\n David\n\n Linus\n\n Simon\n\n Sebbe\n\n \n And class: Fed22G \n\n\nTribute to Mr.Lahey\n\n 'I'm sober enough to know what I'm doing, and drunk enough to really enjoy it.'\n\nPress ctrl + R to restart"
-  p.className = "theEnd"
-  
-  document.body.textContent = ""
-  document.body.append(divz, p)  
-  }
+
+  const divz = document.createElement("div");
+  const p = document.createElement("p");
+
+  divz.textContent = "";
+  divz.className = "theEndContainer";
+
+  p.textContent =
+    "Eureka! You live another day with a roof over your head! \n\n\n   This is the first text-based game i've done and with some help from my teacher and classmates.\n\n I want to thank:\n\n  Kenzo\n\n Noomie\n\n Madden\n\n David\n\n Linus\n\n Simon\n\n Sebbe\n\n \n And class: Fed22G \n\n\nTribute to Mr.Lahey\n\n 'I'm sober enough to know what I'm doing, and drunk enough to really enjoy it.'\n\nPress ctrl + R to restart";
+  p.className = "theEnd";
+
+  document.body.textContent = "";
+  document.body.append(divz, p);
+}

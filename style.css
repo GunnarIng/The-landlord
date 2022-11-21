@@ -2,20 +2,16 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
 }
 header {
   background-image: url("./media/city\ background.jpg");
   background-size: cover;
   background-position: bottom center;
-  
 }
 
 body {
   overflow: hidden;
   position: relative;
-  
-  
 }
 
 #press {
@@ -50,7 +46,7 @@ h2 {
   font-family: "Press Start 2P", cursive;
   font-size: 2rem;
   background: -webkit-linear-gradient(rgb(6, 243, 85), rgb(0, 130, 9), rgb(0, 42, 9));
-  -webkit-background-clip: text; /*what error is this?????*/
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
@@ -143,7 +139,6 @@ h1:hover {
 }
 
 .theEndContainer {
- 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -154,11 +149,7 @@ h1:hover {
   background-image: url("./media/city\ background.jpg");
   background-size: cover;
   background-position: bottom center;
-  
-  
-  
 }
-
 
 .theEnd {
   white-space: pre-line;
@@ -173,7 +164,6 @@ h1:hover {
   text-align: center;
   position: relative;
   animation: runfool 30s linear forwards;
-  
 }
 
 @keyframes runfool {
