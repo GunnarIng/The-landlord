@@ -70,8 +70,10 @@ h2 {
 }
 
 #description {
+  
   font-family: "Carrois Gothic SC", sans-serif;
   text-align: center;
+  margin-top: 10px;
   font-size: 1.3rem;
   font-weight: 600;
   height: 20%;
@@ -100,7 +102,7 @@ h2 {
   font-size: 0.8rem;
   line-height: 19px;
   padding: 0.1rem;
-  margin-top: 8px;
+  margin-top: 7px;
   border-radius: 5px;
   border-style: solid;
   width: 200px;
@@ -175,9 +177,9 @@ h1:hover {
   }
 }
 
-@media screen and (max-width: 872px) {
+@media screen and (max-width: 850px) {
   h1 {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
   h2 {
@@ -188,7 +190,7 @@ h1:hover {
   #story {
     height: 70%;
     width: 80%;
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   #description {
@@ -205,7 +207,7 @@ h1:hover {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 360px) {
   h1 {
     font-size: 1.2rem;
   }
@@ -218,7 +220,8 @@ h1:hover {
   #story {
     height: 70%;
     width: 80%;
-    font-size: 1rem;
+    font-size: .6rem;
+    padding-bottom: 10px;
   }
 
   #description {
@@ -234,3 +237,31 @@ h1:hover {
     font-size: 2vh;
   }
 }
+
+@media screen and (min-width: 1920px){
+  #story {
+    height: 70%;
+    width: 80%;
+    font-size: 3rem;
+  }
+
+  #description {
+    font-size: 3rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    top: 1.6rem;
+    font-size: 5rem;
+  }
+  .button{
+    font-size: 2vh;
+    line-height: 1.3em;
+    width: 400px;
+  }
+
+}
+  
