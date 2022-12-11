@@ -207,7 +207,7 @@ h1:hover {
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (min-width: 360px) {
   h1 {
     font-size: 1.2rem;
   }
@@ -220,7 +220,7 @@ h1:hover {
   #story {
     height: 70%;
     width: 80%;
-    font-size: .6rem;
+    font-size: 1rem;
     padding-bottom: 10px;
   }
 
@@ -237,6 +237,10 @@ h1:hover {
     font-size: 2vh;
   }
 }
+
+
+
+
 
 @media screen and (min-width: 1920px){
   #story {

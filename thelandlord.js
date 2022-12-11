@@ -49,7 +49,7 @@ function theStart() {
   const button1 = document.getElementById("opt-1");
   const button2 = document.getElementById("opt-2");
 
-  button2.classList.remove("hidden");
+  button2.classList.add("hidden");
 
   story.textContent =
     'You wake up on the floor with a bad hangover. Suddenly you hear someone banging on your door and shouting "I know you are in there, open up!".';
